@@ -23,10 +23,10 @@ const [data, setData] = useState(null);
  
 
   useEffect(() => {
-    
+    const memoData = useMemo(() =>getData(data) , [data]);
   }, []);
 
-  const memoData = useMemo(() =>getData(data) , [data]);
+  
 
   if (loading) {
     return <div>Loading...</div>
